@@ -357,91 +357,189 @@
         }
 
         /* ====== Editions Section ====== */
-        .editions-timeline {
-            position: relative;
-            max-width: 800px;
+         .section {
+            padding: 80px 0;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 0;
         }
-
-        .editions-timeline:before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            width: 2px;
-            height: 100%;
-            background-color: var(--primary);
-            transform: translateX(-50%);
-        }
-
-        .timeline-item {
-            position: relative;
+        
+        .section-title {
+            text-align: center;
             margin-bottom: 50px;
-            width: 100%;
         }
-
-        .timeline-item:nth-child(odd) {
-            padding-right: calc(50% + 30px);
-            text-align: right;
-        }
-
-        .timeline-item:nth-child(even) {
-            padding-left: calc(50% + 30px);
-            text-align: left;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: 50%;
-            top: 30px;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: var(--primary);
-            transform: translateX(-50%);
-            border: 4px solid var(--secondary);
-        }
-
-        .timeline-content {
-            background-color: white;
-            padding: 30px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--card-shadow);
-        }
-
-        .timeline-year {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .timeline-winner {
-            font-size: 20px;
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
             margin-bottom: 15px;
+            text-transform: uppercase;
         }
-
-        .timeline-winner span {
-            font-weight: 700;
-        }
-
-        .timeline-stats {
+        
+        /* ====== STYLE DES ÉDITIONS ====== */
+        .editions-container {
             display: flex;
-            gap: 20px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
+            gap: 30px;
+            overflow-x: auto;
+            padding: 20px 0;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
         }
-
-        .stat-item {
+        
+        .edition-card {
+            min-width: 300px;
+            max-width: 400px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            scroll-snap-align: start;
+            transition: transform 0.3s ease;
+        }
+        
+        .edition-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .edition-header {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .edition-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .edition-card:hover .edition-header img {
+            transform: scale(1.05);
+        }
+        
+        .edition-year {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        
+        .edition-content {
+            padding: 20px;
+        }
+        
+        .edition-winner {
             display: flex;
             align-items: center;
-            font-size: 14px;
+            margin-bottom: 15px;
         }
-
-        .stat-item i {
+        
+        .winner-photo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 3px solid var(--primary);
+        }
+        
+        .winner-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .winner-info a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .winner-info a i {
             margin-right: 5px;
+        }
+        
+        .edition-stats {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            padding: 15px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-item i {
+            display: block;
+            font-size: 1.5rem;
             color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        /* ====== GALERIE PHOTOS ====== */
+        .gallery-section {
+            margin-top: 20px;
+        }
+        
+        .gallery-title {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .gallery-title i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        
+        .gallery-container {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+        
+        .gallery-item {
+            min-width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* ====== RESPONSIVE ====== */
+        @media (max-width: 768px) {
+            .edition-card {
+                min-width: 85vw;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
         }
 
         /* ====== Partners Section ====== */
