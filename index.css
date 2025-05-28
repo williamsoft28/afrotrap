@@ -755,4 +755,24 @@
                 padding: 20px;
             }
         }
-    
+   
+/* Style du logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 40px; /* Hauteur cohérente avec votre design */
+    width: auto;  /* Maintient les proportions */
+}
+
+.logo-text {
+    font-family: 'Urban', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FFD700;
+    text-transform: uppercase;
+}
