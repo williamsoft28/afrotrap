@@ -78,77 +78,70 @@
             <button class="filter-btn">France</button>
         </div>
         
-        <div class="artists-grid">
-            <!-- Artist 1 -->
-            <div class="artist-card">
-                <div class="artist-image">
-                    <img src="https://images.unsplash.com/photo-1618641986557-1ecd230959aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="MC Afro">
-                    <div class="artist-votes">
-                        <i class="fas fa-fire"></i> 1,4K votes
-                    </div>
-                </div>
-                <div class="artist-info">
-                    <h3 class="artist-name">MC Afro</h3>
-                    <div class="artist-country">
-                        <i class="fas fa-map-marker-alt"></i> Sénégal
-                    </div>
-                    <p>Spécialiste des flows endiablés et des textes engagés, MC Afro domine la scène depuis 3 ans.</p>
-                    
-                    <div class="artist-social">
-                        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-spotify"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Artist 2 -->
-            <div class="artist-card">
-                <div class="artist-image">
-                    <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Trap Queen">
-                    <div class="artist-votes">
-                        <i class="fas fa-fire"></i> 2,1K votes
-                    </div>
-                </div>
-                <div class="artist-info">
-                    <h3 class="artist-name">Trap Queen</h3>
-                    <div class="artist-country">
-                        <i class="fas fa-map-marker-alt"></i> Côte d'Ivoire
-                    </div>
-                    <p>Seule femme en compétition, Trap Queen révolutionne le genre avec son flow unique.</p>
-                    
-                    <div class="artist-social">
-                        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-spotify"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Artist 3 -->
-            <div class="artist-card">
-                <div class="artist-image">
-                    <img src="https://images.unsplash.com/photo-1549213783-8284d0336c4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Lion Rythm">
-                    <div class="artist-votes">
-                        <i class="fas fa-fire"></i> 890 votes
-                    </div>
-                </div>
-                <div class="artist-info">
-                    <h3 class="artist-name">Lion Rythm</h3>
-                    <div class="artist-country">
-                        <i class="fas fa-map-marker-alt"></i> France
-                    </div>
-                    <p>Nouveau venu sur la scène, Lion Rythm impressionne par sa technique vocale.</p>
-                    
-                    <div class="artist-social">
-                        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-spotify"></i></a>
-                    </div>
-                </div>
+        <!-- Section Artistes Modifiée -->
+<section id="artists" class="section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Les 50 Rappeurs en Compétition</h2>
+            <div class="search-filter">
+                <input type="text" placeholder="Rechercher un artiste..." class="search-input">
+                <select class="country-filter">
+                    <option value="all">Tous les pays</option>
+                    <option value="senegal">Sénégal</option>
+                    <option value="cote-ivoire">Côte d'Ivoire</option>
+                    <!-- Ajoutez d'autres pays -->
+                </select>
             </div>
         </div>
+
+        <div class="artists-grid-container">
+            <!-- Barre de défilement personnalisée -->
+            <div class="scroll-track">
+                <div class="scroll-thumb"></div>
+            </div>
+            
+            <div class="artists-grid">
+                <!-- Carte Artiste Type (à générer dynamiquement pour 50 artistes) -->
+                <div class="artist-card" data-country="senegal">
+                    <div class="artist-rank">1</div>
+                    <div class="artist-image">
+                        <img src="artist1.jpg" alt="Nom Artiste" loading="lazy">
+                    </div>
+                    <div class="artist-info">
+                        <h3>MC Afro</h3>
+                        <div class="artist-country">
+                            <i class="fas fa-map-marker-alt"></i> Sénégal
+                        </div>
+                        <div class="artist-votes">
+                            <div class="vote-progress" style="width: 85%"></div>
+                            <span>42K votes</span>
+                        </div>
+                    </div>
+                    <div class="artist-actions">
+                        <a href="#" class="btn-vote">Voter</a>
+                        <a href="#" class="btn-youtube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Répéter pour les 49 autres artistes -->
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <button class="page-prev"><i class="fas fa-chevron-left"></i></button>
+            <div class="page-numbers">
+                <span class="active">1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+            </div>
+            <button class="page-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
     </div>
+</section>
 </section>
 
 <!-- Editions Section -->
