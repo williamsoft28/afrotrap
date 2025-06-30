@@ -62,83 +62,38 @@
 </section>
 
 <!-- Artists Section -->
-<section id="artists" class="section">
+<!-- Section Vote -->
+<section id="voting" class="section">
     <div class="container">
         <div class="section-title">
-            <h2>Les Rappeurs en Compétition</h2>
-            <p>Découvrez les talents qui se battent pour le titre de champion Afro Trap 2024</p>
-        </div>
-        
-        <div class="artists-filter">
-            <button class="filter-btn active">Tous</button>
-            <button class="filter-btn">Populaires</button>
-            <button class="filter-btn">A-Z</button>
-            <button class="filter-btn">Sénégal</button>
-            <button class="filter-btn">Côte d'Ivoire</button>
-            <button class="filter-btn">France</button>
-        </div>
-        
-        <!-- Section Artistes Modifiée -->
-<section id="artists" class="section">
-    <div class="container">
-        <div class="section-title">
-            <h2>Les 50 Rappeurs en Compétition</h2>
-            <div class="search-filter">
-                <input type="text" placeholder="Rechercher un artiste..." class="search-input">
-                <select class="country-filter">
-                    <option value="all">Tous les pays</option>
-                    <option value="senegal">Sénégal</option>
-                    <option value="cote-ivoire">Côte d'Ivoire</option>
-                    <!-- Ajoutez d'autres pays -->
-                </select>
-            </div>
+            <h2>Votez pour votre artiste préféré</h2>
+            <p>Votre voix compte pour la compétition Afro Trap 2024</p>
         </div>
 
-        <div class="artists-grid-container">
-            <!-- Barre de défilement personnalisée -->
-            <div class="scroll-track">
-                <div class="scroll-thumb"></div>
-            </div>
-            
-            <div class="artists-grid">
-                <!-- Carte Artiste Type (à générer dynamiquement pour 50 artistes) -->
-                <div class="artist-card" data-country="senegal">
-                    <div class="artist-rank">1</div>
-                    <div class="artist-image">
-                        <img src="artist1.jpg" alt="Nom Artiste" loading="lazy">
-                    </div>
-                    <div class="artist-info">
-                        <h3>MC Afro</h3>
-                        <div class="artist-country">
-                            <i class="fas fa-map-marker-alt"></i> Sénégal
-                        </div>
-                        <div class="artist-votes">
-                            <div class="vote-progress" style="width: 85%"></div>
-                            <span>42K votes</span>
-                        </div>
-                    </div>
-                    <div class="artist-actions">
-                        <a href="#" class="btn-vote">Voter</a>
-                        <a href="#" class="btn-youtube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
+        <!-- Barre de recherche -->
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="artistSearch" placeholder="Rechercher un artiste...">
+        </div>
+
+        <!-- Conteneur des votes -->
+        <div class="voting-grid">
+            <!-- Les cartes seront générées par JavaScript -->
+        </div>
+
+        <!-- Modal de confirmation -->
+        <div id="voteModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-body">
+                    <i class="fas fa-check-circle success-icon"></i>
+                    <h3>Vote enregistré !</h3>
+                    <p>Vous avez voté pour <strong id="votedArtistName"></strong></p>
+                    <button class="btn-share">
+                        <i class="fas fa-share-alt"></i> Partager
+                    </button>
                 </div>
-                <!-- Répéter pour les 49 autres artistes -->
             </div>
-        </div>
-
-        <!-- Pagination -->
-        <div class="pagination">
-            <button class="page-prev"><i class="fas fa-chevron-left"></i></button>
-            <div class="page-numbers">
-                <span class="active">1</span>
-                <span>2</span>
-                <span>3</span>
-                <span>4</span>
-                <span>5</span>
-            </div>
-            <button class="page-next"><i class="fas fa-chevron-right"></i></button>
         </div>
     </div>
 </section>
